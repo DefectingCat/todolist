@@ -17,4 +17,5 @@ export default {
 
 <style>
 @import './assets/css/base.css';
+@import url('//at.alicdn.com/t/font_2359322_s9o06gjbk5m.css');
 </style>

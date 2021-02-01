@@ -4,7 +4,7 @@
       type="text"
       v-model="msg"
       @keyup.enter="emitMsg"
-      placeholder="Add somting..."
+      placeholder="Add someting..."
     />
     <button @click="emitMsg">Add</button>
   </div>
