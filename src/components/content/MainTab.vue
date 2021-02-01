@@ -72,5 +72,9 @@ export default {
 .list {
   margin-top: 7%;
   width: 350px;
+  overflow: scroll;
+}
+.list::-webkit-scrollbar {
+  width: 0;
 }
 </style>
