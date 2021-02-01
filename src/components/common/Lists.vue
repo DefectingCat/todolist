@@ -26,7 +26,6 @@
             v-show="isEdit == item.id"
             v-model="editedMsg"
             @keyup.enter="editMsg(i)"
-            :key="item.id"
             @blur="editMsg(i)"
             class="edit"
           />

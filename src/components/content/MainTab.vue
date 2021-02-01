@@ -9,6 +9,14 @@
       @editMsg="editMsg"
       @doneItem="doneItem"
     />
+
+    <div class="wrap-proecss">
+      <div class="processed" :style="{ width: process }">
+        <span>
+          {{ process }}
+        </span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -44,6 +52,24 @@ export default {
         ? (this.lists[i].done = false)
         : (this.lists[i].done = true);
     }
+  },
+  computed: {
+    process() {
+      let doneItem = [];
+      let result = 0;
+      let len = this.lists.length;
+      for (let i of this.lists) {
+        if (i.done) {
+          doneItem.push(i);
+        }
+      }
+      result = (doneItem.length / len) * 100;
+      if (Math.floor(result)) {
+        return `${Math.floor(result)}%`;
+      } else {
+        return 0;
+      }
+    }
   }
 };
 </script>
@@ -76,5 +102,25 @@ export default {
 }
 .list::-webkit-scrollbar {
   width: 0;
+}
+.processed {
+  display: flex;
+  background-color: rgba(189, 189, 189, 0.562);
+  height: 30px;
+  transition: all 500ms ease;
+  border-radius: 1em;
+  overflow: hidden;
+  line-height: 30px;
+  justify-content: flex-end;
+}
+.processed span {
+  margin-right: 4px;
+}
+.wrap-proecss {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-radius: 1em;
+  overflow: hidden;
 }
 </style>
