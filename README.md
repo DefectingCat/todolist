@@ -1,5 +1,7 @@
 # todolist
 
+这是一个 ToDolist 的实践案例ヾ(•ω•`)o
+
 ## Project setup
 ```
 npm install
