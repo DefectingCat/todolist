@@ -1,6 +1,6 @@
 .<template>
   <div class="list">
-    <ul>
+    <transition-group name="list" tag="ul">
       <li v-for="(item, i) in lists" :key="item.id" :id="item.id">
         <div class="item-view">
           <input
@@ -20,7 +20,6 @@
               {{ item.msg }}
             </span>
           </label>
-
           <input
             type="text"
             v-show="isEdit == item.id"
@@ -29,7 +28,6 @@
             @blur="editMsg(i)"
             class="edit"
           />
-
           <i
             class="ico-btn iconfont icon-bianji"
             @click="editItem(i, item.id)"
@@ -37,7 +35,7 @@
           <i class="ico-btn iconfont icon-shanchu" @click="removeItem(i)"></i>
         </div>
       </li>
-    </ul>
+    </transition-group>
   </div>
 </template>
 
@@ -112,5 +110,17 @@ li {
   width: 250px;
   padding-left: 6px;
   /* padding-right: 4px; */
+}
+.list-enter-active,
+.list-leave-active {
+  transition: all 500ms ease;
+}
+.list-enter {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
 }
 </style>
