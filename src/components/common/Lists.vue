@@ -79,6 +79,7 @@ ul {
 }
 li {
   padding-left: 5%;
+  transition: all 500ms ease;
 }
 .done {
   text-decoration: line-through;
@@ -111,9 +112,12 @@ li {
   padding-left: 6px;
   /* padding-right: 4px; */
 }
-.list-enter-active,
+/* .list-enter-active,
 .list-leave-active {
   transition: all 500ms ease;
+} */
+.list-leave-active {
+  position: absolute;
 }
 .list-enter {
   opacity: 0;
@@ -123,4 +127,7 @@ li {
   opacity: 0;
   transform: translateX(30px);
 }
+/* .list-move {
+  transition: all 500ms ease;
+} */
 </style>

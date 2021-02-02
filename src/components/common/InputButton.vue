@@ -60,5 +60,12 @@ button {
   outline: none;
   cursor: pointer;
   padding: 0px 20px;
+  font-weight: bold;
+  transition: all 500ms ease;
+}
+button:hover {
+  background-color: rgb(240, 170, 143);
+  color: #fff;
+  border: 1px solid #dce4ec;
 }
 </style>
