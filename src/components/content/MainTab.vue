@@ -1,8 +1,6 @@
 .<template>
   <div class="main-tab">
-    <div class="input">
-      <InputButton @addMsg="addMsg" />
-    </div>
+    <InputButton @addMsg="addMsg" />
     <Lists
       :lists="lists"
       @removeItem="removeItem"
@@ -90,18 +88,6 @@ export default {
   /* justify-items: center; */
   align-items: center;
   border-radius: 1em;
-}
-.input {
-  margin-top: 7%;
-  width: 350px;
-}
-.list {
-  margin-top: 7%;
-  width: 350px;
-  overflow: scroll;
-}
-.list::-webkit-scrollbar {
-  width: 0;
 }
 .processed {
   display: flex;

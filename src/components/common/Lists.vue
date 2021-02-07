@@ -70,16 +70,21 @@ export default {
 </script>
 
 <style scoped>
-/* .list {
-  display: flex;
-  align-items: center;
-} */
+.list {
+  margin-top: 7%;
+  width: 350px;
+  overflow: scroll;
+}
+.list::-webkit-scrollbar {
+  width: 0;
+}
 ul {
+  position: relative;
   list-style-type: none;
 }
 li {
   padding-left: 5%;
-  transition: all 500ms ease;
+  margin-top: 8px;
 }
 .done {
   text-decoration: line-through;
@@ -101,7 +106,7 @@ li {
   display: flex;
   align-items: center;
   /* justify-content: space-around; */
-  margin-top: 8px;
+  background-color: #fff;
 }
 .edit {
   border: none;
@@ -112,20 +117,32 @@ li {
   padding-left: 6px;
   /* padding-right: 4px; */
 }
-/* .list-enter-active,
+.list-enter-active,
 .list-leave-active {
   transition: all 500ms ease;
-} */
+}
+.list-move {
+  transition: all 500ms ease;
+}
 .list-leave-active {
+  /* max-height: 24px; */
+  /* 脱离文档才能触发v-move */
   position: absolute;
+  margin-top: 0;
 }
 .list-enter {
-  opacity: 0;
   transform: translateY(-30px);
 }
+.list-leave {
+  /* height: 24px; */
+  /* position: absolute; */
+}
 .list-leave-to {
+  /* transform: translateY(100%); */
+  /* max-height: 0px; */
+  /* height: 0px; */
   opacity: 0;
-  transform: translateX(30px);
+  /* transform: scale(0); */
 }
 /* .list-move {
   transition: all 500ms ease;

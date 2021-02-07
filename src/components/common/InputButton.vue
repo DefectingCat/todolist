@@ -35,6 +35,8 @@ export default {
   justify-content: space-around;
   width: 100%;
   align-items: center;
+  margin-top: 7%;
+  width: 350px;
 }
 input {
   /* width: 100%; */
